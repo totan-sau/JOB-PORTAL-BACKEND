@@ -26,6 +26,9 @@ app.use(cors(corsOptions));
 const PORT = process.env.PORT || 3000;
 
 // Api's
+app.get('/api/v1/test', function(req, res) {
+    res.send("Hello World!")
+});
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/company', companyRouter);
 app.use('/api/v1/job', jobRouter);
