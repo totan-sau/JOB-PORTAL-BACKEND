@@ -14,16 +14,16 @@ dotenv.config({});
 const app = express();
 
 // Middleware
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-app.use(cookieParser());
-const corsOptions = {
-    origin: process.env.CORS_ORIGIN,
-    credentials: true
-}
+// app.use(express.urlencoded({extended: true}));
+// app.use(cookieParser());
+// const corsOptions = {
+//     origin: process.env.CORS_ORIGIN,
+//     credentials: true
+// }
 
-app.use(cors(corsOptions));
+app.use(cors());
 const PORT = process.env.PORT || 3000;
+app.use(express.json());
 
 // Api's
 app.get('/api/v1/test', function(req, res) {
